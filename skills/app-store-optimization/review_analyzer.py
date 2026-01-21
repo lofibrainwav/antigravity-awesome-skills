@@ -74,7 +74,7 @@ class ReviewAnalyzer:
         "feature request",
     ]
 
-    def __init__(self, app_name: str):
+    def __init__(self, app_name: str) -> None:
         """
         Initialize review analyzer.
 

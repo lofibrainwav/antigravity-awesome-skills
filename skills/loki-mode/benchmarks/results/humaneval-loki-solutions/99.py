@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def closest_integer(value):
+def closest_integer(value) -> None:
     """
     Create a function that takes a value (string) representing a number
     and returns the closest integer to it. If the number is equidistant

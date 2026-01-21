@@ -1,4 +1,4 @@
-def is_palindrome(text: str):
+def is_palindrome(text: str) -> None:
     """
     Checks if given string is a palindrome
     >>> is_palindrome('')

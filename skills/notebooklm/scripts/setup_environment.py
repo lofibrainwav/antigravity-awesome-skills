@@ -14,7 +14,7 @@ from pathlib import Path
 class SkillEnvironment:
     """Manages skill-specific virtual environment"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         # Skill directory paths
         self.skill_dir = Path(__file__).parent.parent
         self.venv_dir = self.skill_dir / ".venv"
@@ -147,7 +147,7 @@ class SkillEnvironment:
             return f"Run: source {activate}"
 
 
-def main():
+def main() -> None:
     """Main entry point for environment setup"""
     import argparse
 

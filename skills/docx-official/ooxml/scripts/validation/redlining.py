@@ -11,13 +11,13 @@ from pathlib import Path
 class RedliningValidator:
     """Validator for tracked changes in Word documents."""
 
-    def __init__(self, unpacked_dir, original_docx, verbose=False):
+    def __init__(self, unpacked_dir, original_docx, verbose=False) -> None:
         self.unpacked_dir = Path(unpacked_dir)
         self.original_docx = Path(original_docx)
         self.verbose = verbose
         self.namespaces = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
 
-    def validate(self):
+    def validate(self) -> None:
         """Main validation method that returns True if valid, False otherwise."""
         # Verify unpacked directory exists and has correct structure
         modified_file = self.unpacked_dir / "word" / "document.xml"
@@ -105,7 +105,7 @@ class RedliningValidator:
                 print("PASSED - All changes by Claude are properly tracked")
             return True
 
-    def _generate_detailed_diff(self, original_text, modified_text):
+    def _generate_detailed_diff(self, original_text, modified_text) -> None:
         """Generate detailed word-level differences using git word diff."""
         error_parts = [
             "FAILED - Document text doesn't match after removing Claude's tracked changes",
@@ -130,7 +130,7 @@ class RedliningValidator:
 
         return "\n".join(error_parts)
 
-    def _get_git_word_diff(self, original_text, modified_text):
+    def _get_git_word_diff(self, original_text, modified_text) -> None:
         """Generate word diff using git with character-level precision."""
         try:
             with tempfile.TemporaryDirectory() as temp_dir:
@@ -208,7 +208,7 @@ class RedliningValidator:
 
         return None
 
-    def _remove_claude_tracked_changes(self, root):
+    def _remove_claude_tracked_changes(self, root) -> None:
         """Remove tracked changes authored by Claude from the XML root."""
         ins_tag = f"{{{self.namespaces['w']}}}ins"
         del_tag = f"{{{self.namespaces['w']}}}del"
@@ -245,7 +245,7 @@ class RedliningValidator:
                     parent.insert(del_index, child)
                 parent.remove(del_elem)
 
-    def _extract_text_content(self, root):
+    def _extract_text_content(self, root) -> None:
         """Extract text content from Word XML, preserving paragraph structure.
 
         Empty paragraphs are skipped to avoid false positives when tracked

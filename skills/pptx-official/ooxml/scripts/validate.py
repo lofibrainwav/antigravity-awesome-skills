@@ -13,7 +13,7 @@ from pathlib import Path
 from validation import DOCXSchemaValidator, PPTXSchemaValidator, RedliningValidator
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Validate Office document XML files")
     parser.add_argument(
         "unpacked_dir",

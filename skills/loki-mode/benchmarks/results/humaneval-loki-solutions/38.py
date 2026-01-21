@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def encode_cyclic(s: str):
+def encode_cyclic(s: str) -> None:
     """
     returns encoded string by cycling groups of three characters.
     """
@@ -15,7 +15,7 @@ def encode_cyclic(s: str):
     return "".join(groups)
 
 
-def decode_cyclic(s: str):
+def decode_cyclic(s: str) -> None:
     """
     takes as input string encoded with encode_cyclic function. Returns decoded string.
     """

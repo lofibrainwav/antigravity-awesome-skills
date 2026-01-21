@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional
 class NotebookLibrary:
     """Manages a collection of NotebookLM notebooks with metadata"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the notebook library"""
         # Store data within the skill directory
         skill_dir = Path(__file__).parent.parent
@@ -29,7 +29,7 @@ class NotebookLibrary:
         # Load existing library
         self._load_library()
 
-    def _load_library(self):
+    def _load_library(self) -> None:
         """Load library from disk"""
         if self.library_file.exists():
             try:
@@ -45,7 +45,7 @@ class NotebookLibrary:
         else:
             self._save_library()
 
-    def _save_library(self):
+    def _save_library(self) -> None:
         """Save library to disk"""
         try:
             data = {
@@ -300,7 +300,7 @@ class NotebookLibrary:
         }
 
 
-def main():
+def main() -> None:
     """Command-line interface for notebook management"""
     parser = argparse.ArgumentParser(description="Manage NotebookLM library")
 

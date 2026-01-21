@@ -1,4 +1,4 @@
-def monotonic(l: list):
+def monotonic(l: list) -> None:
     """Return True is list elements are monotonically increasing or decreasing.
     >>> monotonic([1, 2, 4, 20])
     True

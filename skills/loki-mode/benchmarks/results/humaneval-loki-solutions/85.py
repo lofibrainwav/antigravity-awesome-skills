@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def add(lst):
+def add(lst) -> None:
     """Given a non-empty list of integers lst. add the even elements that are at odd indices..
 
 

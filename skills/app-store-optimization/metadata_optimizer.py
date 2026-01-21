@@ -22,7 +22,7 @@ class MetadataOptimizer:
         "google": {"title": 50, "short_description": 80, "full_description": 4000},
     }
 
-    def __init__(self, platform: str = "apple"):
+    def __init__(self, platform: str = "apple") -> None:
         """
         Initialize metadata optimizer.
 

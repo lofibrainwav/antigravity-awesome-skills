@@ -1,4 +1,4 @@
-def generate_integers(a, b):
+def generate_integers(a, b) -> None:
     """
     Given two positive integers a and b, return the even digits between a
     and b, in ascending order.

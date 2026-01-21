@@ -14,7 +14,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 
-def setup_libreoffice_macro():
+def setup_libreoffice_macro() -> None:
     """Setup LibreOffice macro for recalculation if not already configured"""
     if platform.system() == "Darwin":
         macro_dir = os.path.expanduser(
@@ -54,7 +54,7 @@ def setup_libreoffice_macro():
         return False
 
 
-def recalc(filename, timeout=30):
+def recalc(filename, timeout=30) -> None:
     """
     Recalculate formulas in Excel file and report any errors
 
@@ -163,7 +163,7 @@ def recalc(filename, timeout=30):
         return {"error": str(e)}
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print("Usage: python recalc.py <excel_file> [timeout_seconds]")
         print("\nRecalculates all formulas in an Excel file using LibreOffice")

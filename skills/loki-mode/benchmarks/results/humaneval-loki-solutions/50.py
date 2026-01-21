@@ -4,7 +4,7 @@
 # Passed: False
 
 
-def decode_shift(s: str):
+def decode_shift(s: str) -> None:
     """
     takes as input string encoded with encode_shift function. Returns decoded string.
     """

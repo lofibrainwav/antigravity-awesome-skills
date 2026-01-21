@@ -13,12 +13,12 @@ from mcp.client.streamable_http import streamablehttp_client
 class MCPConnection(ABC):
     """Base class for MCP server connections."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.session = None
         self._stack = None
 
     @abstractmethod
-    def _create_context(self):
+    def _create_context(self) -> None:
         """Create the connection context based on connection type."""
 
     async def __aenter__(self):
@@ -73,13 +73,13 @@ class MCPConnection(ABC):
 class MCPConnectionStdio(MCPConnection):
     """MCP connection using standard input/output."""
 
-    def __init__(self, command: str, args: list[str] = None, env: dict[str, str] = None):
+    def __init__(self, command: str, args: list[str] = None, env: dict[str, str] = None) -> None:
         super().__init__()
         self.command = command
         self.args = args or []
         self.env = env
 
-    def _create_context(self):
+    def _create_context(self) -> None:
         return stdio_client(
             StdioServerParameters(command=self.command, args=self.args, env=self.env)
         )
@@ -88,24 +88,24 @@ class MCPConnectionStdio(MCPConnection):
 class MCPConnectionSSE(MCPConnection):
     """MCP connection using Server-Sent Events."""
 
-    def __init__(self, url: str, headers: dict[str, str] = None):
+    def __init__(self, url: str, headers: dict[str, str] = None) -> None:
         super().__init__()
         self.url = url
         self.headers = headers or {}
 
-    def _create_context(self):
+    def _create_context(self) -> None:
         return sse_client(url=self.url, headers=self.headers)
 
 
 class MCPConnectionHTTP(MCPConnection):
     """MCP connection using Streamable HTTP."""
 
-    def __init__(self, url: str, headers: dict[str, str] = None):
+    def __init__(self, url: str, headers: dict[str, str] = None) -> None:
         super().__init__()
         self.url = url
         self.headers = headers or {}
 
-    def _create_context(self):
+    def _create_context(self) -> None:
         return streamablehttp_client(url=self.url, headers=self.headers)
 
 

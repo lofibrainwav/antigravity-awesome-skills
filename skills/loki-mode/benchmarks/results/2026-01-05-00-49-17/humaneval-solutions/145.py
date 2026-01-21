@@ -1,4 +1,4 @@
-def order_by_points(nums):
+def order_by_points(nums) -> None:
     """
     Write a function which sorts the given list of integers
     in ascending order according to the sum of their digits.
@@ -10,7 +10,7 @@ def order_by_points(nums):
     >>> order_by_points([]) == []
     """
 
-    def digit_sum(n):
+    def digit_sum(n) -> None:
         s = str(abs(n))
         total = 0
         for i, digit in enumerate(s):

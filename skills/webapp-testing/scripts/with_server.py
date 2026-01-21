@@ -21,7 +21,7 @@ import sys
 import time
 
 
-def is_server_ready(port, timeout=30):
+def is_server_ready(port, timeout=30) -> None:
     """Wait for server to be ready by polling the port."""
     start_time = time.time()
     while time.time() - start_time < timeout:
@@ -33,7 +33,7 @@ def is_server_ready(port, timeout=30):
     return False
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Run command with one or more servers")
     parser.add_argument(
         "--server",

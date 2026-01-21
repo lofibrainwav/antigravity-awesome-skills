@@ -1,4 +1,4 @@
-def median(l: list):
+def median(l: list) -> None:
     """Return median of elements in the list l.
     >>> median([3, 1, 2, 4, 5])
     3

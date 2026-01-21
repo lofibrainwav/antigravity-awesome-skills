@@ -41,7 +41,7 @@ class BrowserFactory:
         return context
 
     @staticmethod
-    def _inject_cookies(context: BrowserContext):
+    def _inject_cookies(context: BrowserContext) -> None:
         """Inject cookies from state.json if available"""
         if STATE_FILE.exists():
             try:
@@ -58,12 +58,12 @@ class StealthUtils:
     """Human-like interaction utilities"""
 
     @staticmethod
-    def random_delay(min_ms: int = 100, max_ms: int = 500):
+    def random_delay(min_ms: int = 100, max_ms: int = 500) -> None:
         """Add random delay"""
         time.sleep(random.uniform(min_ms / 1000, max_ms / 1000))
 
     @staticmethod
-    def human_type(page: Page, selector: str, text: str, wpm_min: int = 320, wpm_max: int = 480):
+    def human_type(page: Page, selector: str, text: str, wpm_min: int = 320, wpm_max: int = 480) -> None:
         """Type with human-like speed"""
         element = page.query_selector(selector)
         if not element:
@@ -87,7 +87,7 @@ class StealthUtils:
                 time.sleep(random.uniform(0.15, 0.4))
 
     @staticmethod
-    def realistic_click(page: Page, selector: str):
+    def realistic_click(page: Page, selector: str) -> None:
         """Click with realistic movement"""
         element = page.query_selector(selector)
         if not element:

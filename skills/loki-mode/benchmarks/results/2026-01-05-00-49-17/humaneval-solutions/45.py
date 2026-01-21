@@ -1,4 +1,4 @@
-def triangle_area(a, h):
+def triangle_area(a, h) -> None:
     """Given length of a side and high return area for a triangle.
     >>> triangle_area(5, 3)
     7.5

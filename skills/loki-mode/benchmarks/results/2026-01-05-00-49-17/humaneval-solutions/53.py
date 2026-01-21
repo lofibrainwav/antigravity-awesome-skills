@@ -1,4 +1,4 @@
-def add(x: int, y: int):
+def add(x: int, y: int) -> None:
     """Add two numbers x and y
     >>> add(2, 3)
     5

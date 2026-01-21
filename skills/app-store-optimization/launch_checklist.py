@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional
 class LaunchChecklistGenerator:
     """Generates comprehensive checklists for app launches and updates."""
 
-    def __init__(self, platform: str = "both"):
+    def __init__(self, platform: str = "both") -> None:
         """
         Initialize checklist generator.
 

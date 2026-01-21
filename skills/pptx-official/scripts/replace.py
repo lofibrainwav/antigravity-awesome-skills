@@ -23,7 +23,7 @@ from pptx.oxml.xmlchemy import OxmlElement
 from pptx.util import Pt
 
 
-def clear_paragraph_bullets(paragraph):
+def clear_paragraph_bullets(paragraph) -> None:
     """Clear bullet formatting from a paragraph."""
     pPr = paragraph._element.get_or_add_pPr()
 
@@ -40,7 +40,7 @@ def clear_paragraph_bullets(paragraph):
     return pPr
 
 
-def apply_paragraph_properties(paragraph, para_data: Dict[str, Any]):
+def apply_paragraph_properties(paragraph, para_data: Dict[str, Any]) -> None:
     """Apply formatting properties to a paragraph."""
     # Get the text but don't set it on paragraph directly yet
     text = para_data.get("text", "")
@@ -110,7 +110,7 @@ def apply_paragraph_properties(paragraph, para_data: Dict[str, Any]):
     apply_font_properties(run, para_data)
 
 
-def apply_font_properties(run, para_data: Dict[str, Any]):
+def apply_font_properties(run, para_data: Dict[str, Any]) -> None:
     """Apply font properties to a text run."""
     if "bold" in para_data:
         run.font.bold = para_data["bold"]
@@ -201,7 +201,7 @@ def validate_replacements(inventory: InventoryData, replacements: Dict) -> List[
     return errors
 
 
-def check_duplicate_keys(pairs):
+def check_duplicate_keys(pairs) -> None:
     """Check for duplicate keys when loading JSON."""
     result = {}
     for key, value in pairs:
@@ -211,7 +211,7 @@ def check_duplicate_keys(pairs):
     return result
 
 
-def apply_replacements(pptx_file: str, json_file: str, output_file: str):
+def apply_replacements(pptx_file: str, json_file: str, output_file: str) -> None:
     """Apply text replacements from JSON to PowerPoint presentation."""
 
     # Load presentation
@@ -353,7 +353,7 @@ def apply_replacements(pptx_file: str, json_file: str, output_file: str):
     print(f"  - Shapes replaced: {shapes_replaced}")
 
 
-def main():
+def main() -> None:
     """Main entry point for command-line usage."""
     if len(sys.argv) != 4:
         print(__doc__)

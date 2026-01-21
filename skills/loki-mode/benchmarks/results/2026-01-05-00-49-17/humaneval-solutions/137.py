@@ -1,4 +1,4 @@
-def compare_one(a, b):
+def compare_one(a, b) -> None:
     """
     Create a function that takes integers, floats, or strings representing
     real numbers, and returns the larger variable in its given variable type.
@@ -11,7 +11,7 @@ def compare_one(a, b):
     compare_one("1", 1) ➞ None
     """
 
-    def to_float(x):
+    def to_float(x) -> None:
         if isinstance(x, str):
             return float(x.replace(",", "."))
         return float(x)

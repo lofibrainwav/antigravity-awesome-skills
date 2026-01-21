@@ -23,7 +23,7 @@ class KeywordAnalyzer:
         "very_high": 500000,
     }
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize keyword analyzer."""
         self.analyzed_keywords = {}
 

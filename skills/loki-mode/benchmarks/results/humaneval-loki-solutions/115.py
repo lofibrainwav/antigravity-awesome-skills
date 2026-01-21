@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def max_fill(grid, capacity):
+def max_fill(grid, capacity) -> None:
     import math
 
     """

@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def modp(n: int, p: int):
+def modp(n: int, p: int) -> None:
     """Return 2^n modulo p (be aware of numerics).
     >>> modp(3, 5)
     3

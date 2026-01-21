@@ -1,4 +1,4 @@
-def get_row(lst, x):
+def get_row(lst, x) -> None:
     """
     You are given a 2 dimensional data, as a nested lists,
     which is similar to matrix, however, unlike matrices,

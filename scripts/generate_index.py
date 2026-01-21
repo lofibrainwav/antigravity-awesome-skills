@@ -3,7 +3,7 @@ import os
 import re
 
 
-def generate_index(skills_dir, output_file):
+def generate_index(skills_dir, output_file) -> None:
     print(f"🏗️ Generating index from: {skills_dir}")
     skills = []
 

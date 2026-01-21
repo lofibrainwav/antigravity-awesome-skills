@@ -1,4 +1,4 @@
-def solve(N):
+def solve(N) -> None:
     """Given a positive integer N, return the total sum of its digits in binary.
 
     Example

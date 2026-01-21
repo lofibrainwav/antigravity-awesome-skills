@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def minSubArraySum(nums):
+def minSubArraySum(nums) -> None:
     """
     Given an array of integers nums, find the minimum sum of any non-empty sub-array
     of nums.

@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def starts_one_ends(n):
+def starts_one_ends(n) -> None:
     """
     Given a positive integer n, return the count of the numbers of n-digit
     positive integers that start or end with 1.

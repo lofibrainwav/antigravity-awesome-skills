@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def by_length(arr):
+def by_length(arr) -> None:
     """
     Given an array of integers, sort the integers that are between 1 and 9 inclusive,
     reverse the resulting array, and then replace each digit by its corresponding name from

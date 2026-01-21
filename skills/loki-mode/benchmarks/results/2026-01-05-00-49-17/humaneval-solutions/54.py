@@ -1,4 +1,4 @@
-def same_chars(s0: str, s1: str):
+def same_chars(s0: str, s1: str) -> None:
     """
     Check if two words have the same characters.
     >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')

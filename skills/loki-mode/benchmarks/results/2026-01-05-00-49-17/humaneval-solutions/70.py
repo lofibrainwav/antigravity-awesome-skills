@@ -1,4 +1,4 @@
-def strange_sort_list(lst):
+def strange_sort_list(lst) -> None:
     """
     Given list of integers, return list in strange order.
     Strange sorting, is when you start with the minimum value,

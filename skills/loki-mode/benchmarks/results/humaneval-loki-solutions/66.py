@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def digitSum(s):
+def digitSum(s) -> None:
     """Task
     Write a function that takes a string as input and returns the sum of the upper characters only'
     ASCII codes.

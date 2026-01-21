@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def do_algebra(operator, operand):
+def do_algebra(operator, operand) -> None:
     """
     Given two lists operator, and operand. The first list has basic algebra operations, and
     the second list is a list of integers. Use the two given lists to build the algebric

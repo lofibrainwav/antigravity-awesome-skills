@@ -225,7 +225,7 @@ AVAILABLE_STACKS = list(STACK_CONFIG.keys())
 class BM25:
     """BM25 ranking algorithm for text search"""
 
-    def __init__(self, k1=1.5, b=0.75):
+    def __init__(self, k1=1.5, b=0.75) -> None:
         self.k1 = k1
         self.b = b
         self.corpus = []
@@ -235,12 +235,12 @@ class BM25:
         self.doc_freqs = defaultdict(int)
         self.N = 0
 
-    def tokenize(self, text):
+    def tokenize(self, text) -> None:
         """Lowercase, split, remove punctuation, filter short words"""
         text = re.sub(r"[^\w\s]", " ", str(text).lower())
         return [w for w in text.split() if len(w) > 2]
 
-    def fit(self, documents):
+    def fit(self, documents) -> None:
         """Build BM25 index from documents"""
         self.corpus = [self.tokenize(doc) for doc in documents]
         self.N = len(self.corpus)
@@ -259,7 +259,7 @@ class BM25:
         for word, freq in self.doc_freqs.items():
             self.idf[word] = log((self.N - freq + 0.5) / (freq + 0.5) + 1)
 
-    def score(self, query):
+    def score(self, query) -> None:
         """Score all documents against query"""
         query_tokens = self.tokenize(query)
         scores = []
@@ -285,13 +285,13 @@ class BM25:
 
 
 # ============ SEARCH FUNCTIONS ============
-def _load_csv(filepath):
+def _load_csv(filepath) -> None:
     """Load CSV and return list of dicts"""
     with open(filepath, "r", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 
-def _search_csv(filepath, search_cols, output_cols, query, max_results):
+def _search_csv(filepath, search_cols, output_cols, query, max_results) -> None:
     """Core search function using BM25"""
     if not filepath.exists():
         return []
@@ -316,7 +316,7 @@ def _search_csv(filepath, search_cols, output_cols, query, max_results):
     return results
 
 
-def detect_domain(query):
+def detect_domain(query) -> None:
     """Auto-detect the most relevant domain from query"""
     query_lower = query.lower()
 
@@ -427,7 +427,7 @@ def detect_domain(query):
     return best if scores[best] > 0 else "style"
 
 
-def search(query, domain=None, max_results=MAX_RESULTS):
+def search(query, domain=None, max_results=MAX_RESULTS) -> None:
     """Main search function with auto-domain detection"""
     if domain is None:
         domain = detect_domain(query)
@@ -451,7 +451,7 @@ def search(query, domain=None, max_results=MAX_RESULTS):
     }
 
 
-def search_stack(query, stack, max_results=MAX_RESULTS):
+def search_stack(query, stack, max_results=MAX_RESULTS) -> None:
     """Search stack-specific guidelines"""
     if stack not in STACK_CONFIG:
         return {"error": f"Unknown stack: {stack}. Available: {', '.join(AVAILABLE_STACKS)}"}

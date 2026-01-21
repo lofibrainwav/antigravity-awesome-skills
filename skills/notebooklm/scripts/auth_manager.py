@@ -40,7 +40,7 @@ class AuthManager:
     - Account switching
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the authentication manager"""
         # Ensure directories exist
         DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -157,7 +157,7 @@ class AuthManager:
                 except Exception:
                     pass
 
-    def _save_browser_state(self, context: BrowserContext):
+    def _save_browser_state(self, context: BrowserContext) -> None:
         """Save browser state to disk"""
         try:
             # Save storage state (cookies, localStorage)
@@ -167,7 +167,7 @@ class AuthManager:
             print(f"  ❌ Failed to save browser state: {e}")
             raise
 
-    def _save_auth_info(self):
+    def _save_auth_info(self) -> None:
         """Save authentication metadata"""
         try:
             info = {
@@ -281,7 +281,7 @@ class AuthManager:
                     pass
 
 
-def main():
+def main() -> None:
     """Command-line interface for authentication management"""
     parser = argparse.ArgumentParser(description="Manage NotebookLM authentication")
 

@@ -27,7 +27,7 @@ class BrowserSession:
     previous messages.
     """
 
-    def __init__(self, session_id: str, context: BrowserContext, notebook_url: str):
+    def __init__(self, session_id: str, context: BrowserContext, notebook_url: str) -> None:
         """
         Initialize a new browser session
 
@@ -48,7 +48,7 @@ class BrowserSession:
         # Initialize the session
         self._initialize()
 
-    def _initialize(self):
+    def _initialize(self) -> None:
         """Initialize the browser session and navigate to NotebookLM"""
         print(f"🚀 Creating session {self.id}...")
 
@@ -81,7 +81,7 @@ class BrowserSession:
                 self.page.close()
             raise
 
-    def _wait_for_ready(self):
+    def _wait_for_ready(self) -> None:
         """Wait for NotebookLM page to be ready"""
         try:
             # Wait for chat input
@@ -205,7 +205,7 @@ class BrowserSession:
 
         raise TimeoutError(f"No response received within {timeout} seconds")
 
-    def reset(self):
+    def reset(self) -> None:
         """Reset the chat by reloading the page"""
         print(f"🔄 Resetting session {self.id}...")
 
@@ -219,7 +219,7 @@ class BrowserSession:
         print(f"✅ Session reset (cleared {previous_count} messages)")
         return previous_count
 
-    def close(self):
+    def close(self) -> None:
         """Close this session and clean up resources"""
         print(f"🛑 Closing session {self.id}...")
 

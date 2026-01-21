@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def next_smallest(lst):
+def next_smallest(lst) -> None:
     """
     You are given a list of integers.
     Write a function next_smallest() that returns the 2nd smallest element of the list.

@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 
-def ensure_venv_and_run():
+def ensure_venv_and_run() -> None:
     """
     Ensure virtual environment exists and run the requested script.
     This is called when any script is imported or run directly.

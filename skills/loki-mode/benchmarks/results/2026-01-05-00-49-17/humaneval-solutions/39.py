@@ -1,4 +1,4 @@
-def prime_fib(n: int):
+def prime_fib(n: int) -> None:
     """
     prime_fib returns n-th number that is a Fibonacci number and it's also prime.
     >>> prime_fib(1)
@@ -13,7 +13,7 @@ def prime_fib(n: int):
     89
     """
 
-    def is_prime(num):
+    def is_prime(num) -> None:
         if num < 2:
             return False
         if num == 2:

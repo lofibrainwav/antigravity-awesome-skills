@@ -1,4 +1,4 @@
-def decode_cyclic(s: str):
+def decode_cyclic(s: str) -> None:
     """
     takes as input string encoded with encode_cyclic function. Returns decoded string.
     """

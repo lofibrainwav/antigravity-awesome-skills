@@ -23,7 +23,7 @@ class PPTXSchemaValidator(BaseSchemaValidator):
         "tablestyleid": "tablestyles",
     }
 
-    def validate(self):
+    def validate(self) -> None:
         """Run all validation checks and return True if all pass."""
         # Test 0: XML well-formedness
         if not self.validate_xml():
@@ -72,7 +72,7 @@ class PPTXSchemaValidator(BaseSchemaValidator):
 
         return all_valid
 
-    def validate_uuid_ids(self):
+    def validate_uuid_ids(self) -> None:
         """Validate that ID attributes that look like UUIDs contain only hex values."""
         import lxml.etree
 
@@ -114,14 +114,14 @@ class PPTXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - All UUID-like IDs contain valid hex values")
             return True
 
-    def _looks_like_uuid(self, value):
+    def _looks_like_uuid(self, value) -> None:
         """Check if a value has the general structure of a UUID."""
         # Remove common UUID delimiters
         clean_value = value.strip("{}()").replace("-", "")
         # Check if it's 32 hex-like characters (could include invalid hex chars)
         return len(clean_value) == 32 and all(c.isalnum() for c in clean_value)
 
-    def validate_slide_layout_ids(self):
+    def validate_slide_layout_ids(self) -> None:
         """Validate that sldLayoutId elements in slide masters reference valid slide layouts."""
         import lxml.etree
 
@@ -192,7 +192,7 @@ class PPTXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - All slide layout IDs reference valid slide layouts")
             return True
 
-    def validate_no_duplicate_slide_layouts(self):
+    def validate_no_duplicate_slide_layouts(self) -> None:
         """Validate that each slide has exactly one slideLayout reference."""
         import lxml.etree
 
@@ -230,7 +230,7 @@ class PPTXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - All slides have exactly one slideLayout reference")
             return True
 
-    def validate_notes_slide_references(self):
+    def validate_notes_slide_references(self) -> None:
         """Validate that each notesSlide file is referenced by only one slide."""
         import lxml.etree
 

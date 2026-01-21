@@ -1,4 +1,4 @@
-def string_to_md5(text):
+def string_to_md5(text) -> None:
     """
     Given a string 'text', return its md5 hash equivalent string.
     If 'text' is an empty string, return None.

@@ -114,7 +114,7 @@ EASING_FUNCTIONS = {
 }
 
 
-def get_easing(name: str = "linear"):
+def get_easing(name: str = "linear") -> None:
     """Get easing function by name."""
     return EASING_FUNCTIONS.get(name, linear)
 

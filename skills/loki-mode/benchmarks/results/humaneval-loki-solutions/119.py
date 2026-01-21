@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def match_parens(lst):
+def match_parens(lst) -> None:
     """
     You are given a list of two strings, both strings consist of open
     parentheses '(' or close parentheses ')' only.
@@ -20,7 +20,7 @@ def match_parens(lst):
     match_parens([')', ')']) == 'No'
     """
 
-    def is_balanced(s):
+    def is_balanced(s) -> None:
         balance = 0
         for char in s:
             if char == "(":

@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def solution(lst):
+def solution(lst) -> None:
     """Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.
 
 

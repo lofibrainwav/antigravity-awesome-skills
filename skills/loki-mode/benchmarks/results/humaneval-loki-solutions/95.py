@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def check_dict_case(dict):
+def check_dict_case(dict) -> None:
     """
     Given a dictionary, return True if all keys are strings in lower
     case or all keys are strings in upper case, else return False.

@@ -1,4 +1,4 @@
-def triangle_area(a, b, c):
+def triangle_area(a, b, c) -> None:
     """
     Given the lengths of the three sides of a triangle. Return the area of
     the triangle rounded to 2 decimal points if the three sides form a valid triangle.

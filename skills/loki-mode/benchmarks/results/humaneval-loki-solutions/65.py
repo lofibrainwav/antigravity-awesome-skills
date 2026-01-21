@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def circular_shift(x, shift):
+def circular_shift(x, shift) -> None:
     """Circular shift the digits of the integer x, shift the digits right by shift
     and return the result as a string.
     If shift > number of digits, return digits reversed.

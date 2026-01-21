@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def words_string(s):
+def words_string(s) -> None:
     """
     You will be given a string of words separated by commas or spaces. Your task is
     to split the string into words and return an array of the words.

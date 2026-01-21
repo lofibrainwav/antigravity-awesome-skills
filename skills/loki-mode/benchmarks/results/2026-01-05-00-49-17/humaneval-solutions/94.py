@@ -1,4 +1,4 @@
-def skjkasdkd(lst):
+def skjkasdkd(lst) -> None:
     """You are given a list of integers.
     You need to find the largest prime value and return the sum of its digits.
 
@@ -11,7 +11,7 @@ def skjkasdkd(lst):
     For lst = [0,8,1,2,1,7] the output should be 7
     """
 
-    def is_prime(n):
+    def is_prime(n) -> None:
         if n < 2:
             return False
         if n == 2:

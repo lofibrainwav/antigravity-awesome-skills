@@ -7,7 +7,7 @@ from pypdf import PdfReader, PdfWriter
 # Fills fillable form fields in a PDF. See forms.md.
 
 
-def fill_pdf_fields(input_pdf_path: str, fields_json_path: str, output_pdf_path: str):
+def fill_pdf_fields(input_pdf_path: str, fields_json_path: str, output_pdf_path: str) -> None:
     with open(fields_json_path) as f:
         fields = json.load(f)
     # Group by page number.
@@ -58,7 +58,7 @@ def fill_pdf_fields(input_pdf_path: str, fields_json_path: str, output_pdf_path:
         writer.write(f)
 
 
-def validation_error_for_field_value(field_info, field_value):
+def validation_error_for_field_value(field_info, field_value) -> None:
     field_type = field_info["type"]
     field_id = field_info["field_id"]
     if field_type == "checkbox":
@@ -89,13 +89,13 @@ def validation_error_for_field_value(field_info, field_value):
 # The horrible workaround is to patch `get_inherited` to return a list of the value strings.
 # We call the original method and adjust the return value only if the argument to `get_inherited`
 # is `FA.Opt` and if the return value is a list of two-element lists.
-def monkeypatch_pydpf_method():
+def monkeypatch_pydpf_method() -> None:
     from pypdf.constants import FieldDictionaryAttributes
     from pypdf.generic import DictionaryObject
 
     original_get_inherited = DictionaryObject.get_inherited
 
-    def patched_get_inherited(self, key: str, default=None):
+    def patched_get_inherited(self, key: str, default=None) -> None:
         result = original_get_inherited(self, key, default)
         if key == FieldDictionaryAttributes.Opt:
             if isinstance(result, list) and all(

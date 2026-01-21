@@ -1,4 +1,4 @@
-def largest_smallest_integers(lst):
+def largest_smallest_integers(lst) -> None:
     """
     Create a function that returns a tuple (a, b), where 'a' is
     the largest of negative integers, and 'b' is the smallest

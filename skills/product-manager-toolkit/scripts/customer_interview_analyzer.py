@@ -13,7 +13,7 @@ from typing import Dict, List
 class InterviewAnalyzer:
     """Analyze customer interviews for insights and patterns"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         # Pain point indicators
         self.pain_indicators = [
             "frustrat",
@@ -505,7 +505,7 @@ def format_single_interview(analysis: Dict) -> str:
     return "\n".join(output)
 
 
-def main():
+def main() -> None:
     import sys
 
     if len(sys.argv) < 2:

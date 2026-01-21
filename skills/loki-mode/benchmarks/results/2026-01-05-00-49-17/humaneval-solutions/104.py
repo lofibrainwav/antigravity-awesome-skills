@@ -1,4 +1,4 @@
-def unique_digits(x):
+def unique_digits(x) -> None:
     """Given a list of positive integers x. return a sorted list of all
     elements that hasn't any even digit.
 
@@ -11,7 +11,7 @@ def unique_digits(x):
     []
     """
 
-    def has_even_digit(n):
+    def has_even_digit(n) -> None:
         while n > 0:
             digit = n % 10
             if digit % 2 == 0:

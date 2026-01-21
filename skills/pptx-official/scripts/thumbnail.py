@@ -64,7 +64,7 @@ FONT_SIZE_RATIO = 0.12  # Font size as fraction of thumbnail width
 LABEL_PADDING_RATIO = 0.4  # Label padding as fraction of font size
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Create thumbnail grids from PowerPoint slides.")
     parser.add_argument("input", help="Input PowerPoint file (.pptx)")
     parser.add_argument(
@@ -142,7 +142,7 @@ def main():
         sys.exit(1)
 
 
-def create_hidden_slide_placeholder(size):
+def create_hidden_slide_placeholder(size) -> None:
     """Create placeholder image for hidden slides."""
     img = Image.new("RGB", size, color="#F0F0F0")
     draw = ImageDraw.Draw(img)
@@ -152,7 +152,7 @@ def create_hidden_slide_placeholder(size):
     return img
 
 
-def get_placeholder_regions(pptx_path):
+def get_placeholder_regions(pptx_path) -> None:
     """Extract ALL text regions from the presentation.
 
     Returns a tuple of (placeholder_regions, slide_dimensions).
@@ -190,7 +190,7 @@ def get_placeholder_regions(pptx_path):
     return placeholder_regions, (slide_width_inches, slide_height_inches)
 
 
-def convert_to_images(pptx_path, temp_dir, dpi):
+def convert_to_images(pptx_path, temp_dir, dpi) -> None:
     """Convert PowerPoint to images via PDF, handling hidden slides."""
     # Detect hidden slides
     print("Analyzing presentation...")

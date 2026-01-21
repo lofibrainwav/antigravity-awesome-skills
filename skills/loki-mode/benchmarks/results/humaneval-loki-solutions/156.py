@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def int_to_mini_roman(number):
+def int_to_mini_roman(number) -> None:
     """
     Given a positive integer, obtain its roman numeral equivalent as a string,
     and return it in lowercase.

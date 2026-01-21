@@ -21,7 +21,7 @@ class CleanupManager:
     - Safe deletion with confirmation
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the cleanup manager"""
         # Skill directory paths
         self.skill_dir = Path(__file__).parent.parent
@@ -184,7 +184,7 @@ class CleanupManager:
             "failed_count": len(failed_items),
         }
 
-    def print_cleanup_preview(self, preserve_library: bool = False):
+    def print_cleanup_preview(self, preserve_library: bool = False) -> None:
         """Print a preview of what will be cleaned"""
         data = self.get_cleanup_paths(preserve_library)
 
@@ -211,7 +211,7 @@ class CleanupManager:
         print("Use --confirm to actually perform the cleanup.")
 
 
-def main():
+def main() -> None:
     """Command-line interface for cleanup management"""
     parser = argparse.ArgumentParser(
         description="Clean up NotebookLM skill data",

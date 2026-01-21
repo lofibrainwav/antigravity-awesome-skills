@@ -6,7 +6,7 @@ from pdf2image import convert_from_path
 # Converts each page of a PDF to a PNG image.
 
 
-def convert(pdf_path, output_dir, max_dim=1000):
+def convert(pdf_path, output_dir, max_dim=1000) -> None:
     images = convert_from_path(pdf_path, dpi=200)
 
     for i, image in enumerate(images):

@@ -1,4 +1,4 @@
-def fib(n: int):
+def fib(n: int) -> None:
     """Return n-th Fibonacci number.
     >>> fib(10)
     55

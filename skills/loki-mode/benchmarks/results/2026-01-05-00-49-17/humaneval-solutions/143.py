@@ -1,4 +1,4 @@
-def words_in_sentence(sentence):
+def words_in_sentence(sentence) -> None:
     """
     You are given a string representing a sentence,
     the sentence contains some words separated by a space,
@@ -19,7 +19,7 @@ def words_in_sentence(sentence):
         * sentence contains only letters
     """
 
-    def is_prime(n):
+    def is_prime(n) -> None:
         if n < 2:
             return False
         if n == 2:

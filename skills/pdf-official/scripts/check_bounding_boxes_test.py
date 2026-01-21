@@ -7,11 +7,11 @@ from check_bounding_boxes import get_bounding_box_messages
 
 # Currently this is not run automatically in CI; it's just for documentation and manual checking.
 class TestGetBoundingBoxMessages(unittest.TestCase):
-    def create_json_stream(self, data):
+    def create_json_stream(self, data) -> None:
         """Helper to create a JSON stream from data"""
         return io.StringIO(json.dumps(data))
 
-    def test_no_intersections(self):
+    def test_no_intersections(self) -> None:
         """Test case with no bounding box intersections"""
         data = {
             "form_fields": [
@@ -35,7 +35,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("SUCCESS" in msg for msg in messages))
         self.assertFalse(any("FAILURE" in msg for msg in messages))
 
-    def test_label_entry_intersection_same_field(self):
+    def test_label_entry_intersection_same_field(self) -> None:
         """Test intersection between label and entry of the same field"""
         data = {
             "form_fields": [
@@ -53,7 +53,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("FAILURE" in msg and "intersection" in msg for msg in messages))
         self.assertFalse(any("SUCCESS" in msg for msg in messages))
 
-    def test_intersection_between_different_fields(self):
+    def test_intersection_between_different_fields(self) -> None:
         """Test intersection between bounding boxes of different fields"""
         data = {
             "form_fields": [
@@ -77,7 +77,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("FAILURE" in msg and "intersection" in msg for msg in messages))
         self.assertFalse(any("SUCCESS" in msg for msg in messages))
 
-    def test_different_pages_no_intersection(self):
+    def test_different_pages_no_intersection(self) -> None:
         """Test that boxes on different pages don't count as intersecting"""
         data = {
             "form_fields": [
@@ -101,7 +101,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("SUCCESS" in msg for msg in messages))
         self.assertFalse(any("FAILURE" in msg for msg in messages))
 
-    def test_entry_height_too_small(self):
+    def test_entry_height_too_small(self) -> None:
         """Test that entry box height is checked against font size"""
         data = {
             "form_fields": [
@@ -122,7 +122,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("FAILURE" in msg and "height" in msg for msg in messages))
         self.assertFalse(any("SUCCESS" in msg for msg in messages))
 
-    def test_entry_height_adequate(self):
+    def test_entry_height_adequate(self) -> None:
         """Test that adequate entry box height passes"""
         data = {
             "form_fields": [
@@ -143,7 +143,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("SUCCESS" in msg for msg in messages))
         self.assertFalse(any("FAILURE" in msg for msg in messages))
 
-    def test_default_font_size(self):
+    def test_default_font_size(self) -> None:
         """Test that default font size is used when not specified"""
         data = {
             "form_fields": [
@@ -162,7 +162,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("FAILURE" in msg and "height" in msg for msg in messages))
         self.assertFalse(any("SUCCESS" in msg for msg in messages))
 
-    def test_no_entry_text(self):
+    def test_no_entry_text(self) -> None:
         """Test that missing entry_text doesn't cause height check"""
         data = {
             "form_fields": [
@@ -180,7 +180,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertTrue(any("SUCCESS" in msg for msg in messages))
         self.assertFalse(any("FAILURE" in msg for msg in messages))
 
-    def test_multiple_errors_limit(self):
+    def test_multiple_errors_limit(self) -> None:
         """Test that error messages are limited to prevent excessive output"""
         fields = []
         # Create many overlapping fields
@@ -205,7 +205,7 @@ class TestGetBoundingBoxMessages(unittest.TestCase):
         self.assertGreater(failure_count, 0)
         self.assertLess(len(messages), 30)  # Should be limited
 
-    def test_edge_touching_boxes(self):
+    def test_edge_touching_boxes(self) -> None:
         """Test that boxes touching at edges don't count as intersecting"""
         data = {
             "form_fields": [

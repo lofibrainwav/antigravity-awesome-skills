@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def count_up_to(n):
+def count_up_to(n) -> None:
     """Implement a function that takes an non-negative integer and returns an array of the first n
     integers that are prime numbers and less than n.
     for example:
@@ -18,7 +18,7 @@ def count_up_to(n):
     if n <= 2:
         return []
 
-    def is_prime(num):
+    def is_prime(num) -> None:
         if num < 2:
             return False
         if num == 2:

@@ -8,7 +8,7 @@ from typing import Dict, List
 
 
 class SEOOptimizer:
-    def __init__(self):
+    def __init__(self) -> None:
         # Common stop words to filter
         self.stop_words = {
             "the",

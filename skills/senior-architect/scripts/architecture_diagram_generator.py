@@ -14,7 +14,7 @@ from typing import Dict
 class ArchitectureDiagramGenerator:
     """Main class for architecture diagram generator functionality"""
 
-    def __init__(self, target_path: str, verbose: bool = False):
+    def __init__(self, target_path: str, verbose: bool = False) -> None:
         self.target_path = Path(target_path)
         self.verbose = verbose
         self.results = {}
@@ -36,7 +36,7 @@ class ArchitectureDiagramGenerator:
             print(f"❌ Error: {e}")
             sys.exit(1)
 
-    def validate_target(self):
+    def validate_target(self) -> None:
         """Validate the target path exists and is accessible"""
         if not self.target_path.exists():
             raise ValueError(f"Target path does not exist: {self.target_path}")
@@ -44,7 +44,7 @@ class ArchitectureDiagramGenerator:
         if self.verbose:
             print(f"✓ Target validated: {self.target_path}")
 
-    def analyze(self):
+    def analyze(self) -> None:
         """Perform the main analysis or operation"""
         if self.verbose:
             print("📊 Analyzing...")
@@ -58,7 +58,7 @@ class ArchitectureDiagramGenerator:
         if self.verbose:
             print(f"✓ Analysis complete: {len(self.results.get('findings', []))} findings")
 
-    def generate_report(self):
+    def generate_report(self) -> None:
         """Generate and display the report"""
         print("\n" + "=" * 50)
         print("REPORT")
@@ -69,7 +69,7 @@ class ArchitectureDiagramGenerator:
         print("=" * 50 + "\n")
 
 
-def main():
+def main() -> None:
     """Main entry point"""
     parser = argparse.ArgumentParser(description="Architecture Diagram Generator")
     parser.add_argument("target", help="Target path to analyze or process")

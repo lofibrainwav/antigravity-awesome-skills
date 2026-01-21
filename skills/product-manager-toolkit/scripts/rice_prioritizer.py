@@ -14,7 +14,7 @@ from typing import Dict, List
 class RICECalculator:
     """Calculate RICE scores for feature prioritization"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.impact_map = {"massive": 3.0, "high": 2.0, "medium": 1.0, "low": 0.5, "minimal": 0.25}
 
         self.confidence_map = {"high": 100, "medium": 80, "low": 50}
@@ -214,7 +214,7 @@ def load_features_from_csv(filepath: str) -> List[Dict]:
     return features
 
 
-def create_sample_csv(filepath: str):
+def create_sample_csv(filepath: str) -> None:
     """Create a sample CSV file for testing"""
     sample_features = [
         ["name", "reach", "impact", "confidence", "effort", "description"],
@@ -251,7 +251,7 @@ def create_sample_csv(filepath: str):
     print(f"Sample CSV created at: {filepath}")
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="RICE Framework for Feature Prioritization")
     parser.add_argument(
         "input", nargs="?", help='CSV file with features or "sample" to create sample'

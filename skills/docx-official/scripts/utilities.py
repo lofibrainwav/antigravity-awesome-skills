@@ -52,7 +52,7 @@ class XMLEditor:
         dom: Parsed DOM tree with parse_position attributes on elements
     """
 
-    def __init__(self, xml_path):
+    def __init__(self, xml_path) -> None:
         """
         Initialize with path to XML file and parse with line number tracking.
 
@@ -180,7 +180,7 @@ class XMLEditor:
             )
         return matches[0]
 
-    def _get_element_text(self, elem):
+    def _get_element_text(self, elem) -> None:
         """
         Recursively extract all text content from an element.
 
@@ -203,7 +203,7 @@ class XMLEditor:
                 text_parts.append(self._get_element_text(node))
         return "".join(text_parts)
 
-    def replace_node(self, elem, new_content):
+    def replace_node(self, elem, new_content) -> None:
         """
         Replace a DOM element with new XML content.
 
@@ -224,7 +224,7 @@ class XMLEditor:
         parent.removeChild(elem)
         return nodes
 
-    def insert_after(self, elem, xml_content):
+    def insert_after(self, elem, xml_content) -> None:
         """
         Insert XML content after a DOM element.
 
@@ -248,7 +248,7 @@ class XMLEditor:
                 parent.appendChild(node)
         return nodes
 
-    def insert_before(self, elem, xml_content):
+    def insert_before(self, elem, xml_content) -> None:
         """
         Insert XML content before a DOM element.
 
@@ -268,7 +268,7 @@ class XMLEditor:
             parent.insertBefore(node, elem)
         return nodes
 
-    def append_to(self, elem, xml_content):
+    def append_to(self, elem, xml_content) -> None:
         """
         Append XML content as a child of a DOM element.
 
@@ -287,7 +287,7 @@ class XMLEditor:
             elem.appendChild(node)
         return nodes
 
-    def get_next_rid(self):
+    def get_next_rid(self) -> None:
         """Get the next available rId for relationships files."""
         max_id = 0
         for rel_elem in self.dom.getElementsByTagName("Relationship"):
@@ -299,7 +299,7 @@ class XMLEditor:
                     pass
         return f"rId{max_id + 1}"
 
-    def save(self):
+    def save(self) -> None:
         """
         Save the edited XML back to the file.
 
@@ -309,7 +309,7 @@ class XMLEditor:
         content = self.dom.toxml(encoding=self.encoding)
         self.xml_path.write_bytes(content)
 
-    def _parse_fragment(self, xml_content):
+    def _parse_fragment(self, xml_content) -> None:
         """
         Parse XML fragment and return list of imported nodes.
 
@@ -343,7 +343,7 @@ class XMLEditor:
         return nodes
 
 
-def _create_line_tracking_parser():
+def _create_line_tracking_parser() -> None:
     """
     Create a SAX parser that tracks line and column numbers for each element.
 
@@ -355,8 +355,8 @@ def _create_line_tracking_parser():
         defusedxml.sax.xmlreader.XMLReader: Configured SAX parser
     """
 
-    def set_content_handler(dom_handler):
-        def startElementNS(name, tagName, attrs):
+    def set_content_handler(dom_handler) -> None:
+        def startElementNS(name, tagName, attrs) -> None:
             orig_start_cb(name, tagName, attrs)
             cur_elem = dom_handler.elementStack[-1]
             cur_elem.parse_position = (

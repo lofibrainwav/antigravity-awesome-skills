@@ -1,4 +1,4 @@
-def car_race_collision(n: int):
+def car_race_collision(n: int) -> None:
     """
     Imagine a road that's a perfectly straight infinitely long line.
     n cars are driving left to right;  simultaneously, a different set of n cars

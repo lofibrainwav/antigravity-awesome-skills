@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def get_closest_vowel(word):
+def get_closest_vowel(word) -> None:
     """You are given a word. Your task is to find the closest vowel that stands between
     two consonants from the right side of the word (case sensitive).
 

@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def anti_shuffle(s):
+def anti_shuffle(s) -> None:
     """
     Write a function that takes a string and returns an ordered version of it.
     Ordered version of string, is a string where all words (separated by space)

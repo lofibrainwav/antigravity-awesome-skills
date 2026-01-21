@@ -7,7 +7,7 @@ from pypdf.annotations import FreeText
 # Fills a PDF by adding text annotations defined in `fields.json`. See forms.md.
 
 
-def transform_coordinates(bbox, image_width, image_height, pdf_width, pdf_height):
+def transform_coordinates(bbox, image_width, image_height, pdf_width, pdf_height) -> None:
     """Transform bounding box from image coordinates to PDF coordinates"""
     # Image coordinates: origin at top-left, y increases downward
     # PDF coordinates: origin at bottom-left, y increases upward
@@ -24,7 +24,7 @@ def transform_coordinates(bbox, image_width, image_height, pdf_width, pdf_height
     return left, bottom, right, top
 
 
-def fill_pdf_form(input_pdf_path, fields_json_path, output_pdf_path):
+def fill_pdf_form(input_pdf_path, fields_json_path, output_pdf_path) -> None:
     """Fill the PDF form with data from fields.json"""
 
     # `fields.json` format described in forms.md.

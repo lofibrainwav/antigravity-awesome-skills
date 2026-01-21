@@ -19,7 +19,7 @@ import six
 from pptx import Presentation
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(
         description="Rearrange PowerPoint slides based on a sequence of indices.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -68,7 +68,7 @@ Note: Slide indices are 0-based (first slide is 0, second is 1, etc.)
         sys.exit(1)
 
 
-def duplicate_slide(pres, index):
+def duplicate_slide(pres, index) -> None:
     """Duplicate a slide in the presentation."""
     source = pres.slides[index]
 
@@ -121,14 +121,14 @@ def duplicate_slide(pres, index):
     return new_slide
 
 
-def delete_slide(pres, index):
+def delete_slide(pres, index) -> None:
     """Delete a slide from the presentation."""
     rId = pres.slides._sldIdLst[index].rId
     pres.part.drop_rel(rId)
     del pres.slides._sldIdLst[index]
 
 
-def reorder_slides(pres, slide_index, target_index):
+def reorder_slides(pres, slide_index, target_index) -> None:
     """Move a slide from one position to another."""
     slides = pres.slides._sldIdLst
 
@@ -140,7 +140,7 @@ def reorder_slides(pres, slide_index, target_index):
     slides.insert(target_index, slide_element)
 
 
-def rearrange_presentation(template_path, output_path, slide_sequence):
+def rearrange_presentation(template_path, output_path, slide_sequence) -> None:
     """
     Create a new presentation with slides from template in specified order.
 

@@ -11,7 +11,7 @@ from typing import Any, Dict, List
 class CompetitorAnalyzer:
     """Analyzes competitor apps to identify ASO opportunities."""
 
-    def __init__(self, category: str, platform: str = "apple"):
+    def __init__(self, category: str, platform: str = "apple") -> None:
         """
         Initialize competitor analyzer.
 

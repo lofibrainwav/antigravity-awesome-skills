@@ -1,4 +1,4 @@
-def intersection(interval1, interval2):
+def intersection(interval1, interval2) -> None:
     """You are given two intervals,
     where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).
     The given intervals are closed which means that the interval (start, end)
@@ -19,7 +19,7 @@ def intersection(interval1, interval2):
     intersection((-3, -1), (-5, 5)) ==> "YES"
     """
 
-    def is_prime(n):
+    def is_prime(n) -> None:
         if n < 2:
             return False
         if n == 2:

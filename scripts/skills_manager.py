@@ -17,7 +17,7 @@ SKILLS_DIR = Path(__file__).parent.parent / "skills"
 DISABLED_DIR = SKILLS_DIR / ".disabled"
 
 
-def list_active():
+def list_active() -> None:
     """List all active skills"""
     print("🟢 Active Skills:\n")
     skills = sorted(
@@ -37,7 +37,7 @@ def list_active():
     print(f"\n✅ Total: {len(skills)} skills + {len(symlinks)} symlinks")
 
 
-def list_disabled():
+def list_disabled() -> None:
     """List all disabled skills"""
     if not DISABLED_DIR.exists():
         print("❌ No disabled skills directory found")
@@ -52,7 +52,7 @@ def list_disabled():
     print(f"\n📊 Total: {len(disabled)} disabled skills")
 
 
-def enable_skill(skill_name):
+def enable_skill(skill_name) -> None:
     """Enable a disabled skill"""
     source = DISABLED_DIR / skill_name
     target = SKILLS_DIR / skill_name
@@ -70,7 +70,7 @@ def enable_skill(skill_name):
     return True
 
 
-def disable_skill(skill_name):
+def disable_skill(skill_name) -> None:
     """Disable an active skill"""
     source = SKILLS_DIR / skill_name
     target = DISABLED_DIR / skill_name
@@ -94,7 +94,7 @@ def disable_skill(skill_name):
     return True
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)

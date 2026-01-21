@@ -8,7 +8,7 @@ from pypdf import PdfReader
 
 
 # This matches the format used by PdfReader `get_fields` and `update_page_form_field_values` methods.
-def get_full_annotation_field_id(annotation):
+def get_full_annotation_field_id(annotation) -> None:
     components = []
     while annotation:
         field_name = annotation.get("/T")
@@ -18,7 +18,7 @@ def get_full_annotation_field_id(annotation):
     return ".".join(reversed(components)) if components else None
 
 
-def make_field_dict(field, field_id):
+def make_field_dict(field, field_id) -> None:
     field_dict = {"field_id": field_id}
     ft = field.get("/FT")
     if ft == "/Tx":
@@ -63,7 +63,7 @@ def make_field_dict(field, field_id):
 #     // Per-type additional fields described in forms.md
 #   },
 # ]
-def get_field_info(reader: PdfReader):
+def get_field_info(reader: PdfReader) -> None:
     fields = reader.get_fields()
 
     field_info_by_id = {}
@@ -131,7 +131,7 @@ def get_field_info(reader: PdfReader):
             )
 
     # Sort by page number, then Y position (flipped in PDF coordinate system), then X.
-    def sort_key(f):
+    def sort_key(f) -> None:
         if "radio_options" in f:
             rect = f["radio_options"][0]["rect"] or [0, 0, 0, 0]
         else:
@@ -145,7 +145,7 @@ def get_field_info(reader: PdfReader):
     return sorted_fields
 
 
-def write_field_info(pdf_path: str, json_output_path: str):
+def write_field_info(pdf_path: str, json_output_path: str) -> None:
     reader = PdfReader(pdf_path)
     field_info = get_field_info(reader)
     with open(json_output_path, "w") as f:

@@ -29,7 +29,7 @@ class ASOScorer:
         "conversion_rate": {"min": 0.02, "target": 0.10},
     }
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize ASO scorer."""
         self.score_breakdown = {}
 

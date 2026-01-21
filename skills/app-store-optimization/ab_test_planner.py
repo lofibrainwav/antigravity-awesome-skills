@@ -25,7 +25,7 @@ class ABTestPlanner:
         "exploratory": 0.80,  # 80% confidence
     }
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize A/B test planner."""
         self.active_tests = []
 

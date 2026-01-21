@@ -9,7 +9,7 @@ from typing import Dict, List
 
 
 class BrandVoiceAnalyzer:
-    def __init__(self):
+    def __init__(self) -> None:
         self.voice_dimensions = {
             "formality": {
                 "formal": ["hereby", "therefore", "furthermore", "pursuant", "regarding"],

@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def eat(number, need, remaining):
+def eat(number, need, remaining) -> None:
     """
     You're a hungry rabbit, and you already have eaten a certain number of carrots,
     but now you need to eat more carrots to complete the day's meals.

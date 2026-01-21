@@ -1,4 +1,4 @@
-def search(lst):
+def search(lst) -> None:
     """
     You are given a non-empty list of positive integers. Return the greatest integer that is greater than
     zero, and has a frequency greater than or equal to the value of the integer itself.

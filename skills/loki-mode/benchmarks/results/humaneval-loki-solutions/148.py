@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def bf(planet1, planet2):
+def bf(planet1, planet2) -> None:
     """
     There are eight planets in our solar system: the closerst to the Sun
     is Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,

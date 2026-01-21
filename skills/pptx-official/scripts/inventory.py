@@ -43,7 +43,7 @@ InventoryData = Dict[str, Dict[str, "ShapeData"]]  # Dict of slide_id -> {shape_
 InventoryDict = Dict[str, Dict[str, ShapeDict]]  # JSON-serializable inventory
 
 
-def main():
+def main() -> None:
     """Main entry point for command-line usage."""
     parser = argparse.ArgumentParser(
         description="Extract text inventory from PowerPoint with proper GroupShape support.",
@@ -127,7 +127,7 @@ class ShapeWithPosition:
 class ParagraphData:
     """Data structure for paragraph properties extracted from a PowerPoint paragraph."""
 
-    def __init__(self, paragraph: Any):
+    def __init__(self, paragraph: Any) -> None:
         """Initialize from a PowerPoint paragraph object.
 
         Args:

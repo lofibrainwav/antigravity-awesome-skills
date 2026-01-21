@@ -1,4 +1,4 @@
-def check_if_last_char_is_a_letter(txt):
+def check_if_last_char_is_a_letter(txt) -> None:
     """
     Create a function that returns True if the last character
     of a given string is an alphabetical character and is not

@@ -1,4 +1,4 @@
-def is_prime(n):
+def is_prime(n) -> None:
     """Return true if a given number is prime, and false otherwise.
     >>> is_prime(6)
     False

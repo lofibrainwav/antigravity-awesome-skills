@@ -185,7 +185,7 @@ def ask_notebooklm(question: str, notebook_url: str, headless: bool = True) -> s
                 pass
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Ask NotebookLM a question")
 
     parser.add_argument("--question", required=True, help="Question to ask")

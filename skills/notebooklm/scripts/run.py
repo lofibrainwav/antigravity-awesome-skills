@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 
-def get_venv_python():
+def get_venv_python() -> None:
     """Get the virtual environment Python executable"""
     skill_dir = Path(__file__).parent.parent
     venv_dir = skill_dir / ".venv"
@@ -23,7 +23,7 @@ def get_venv_python():
     return venv_python
 
 
-def ensure_venv():
+def ensure_venv() -> None:
     """Ensure virtual environment exists"""
     skill_dir = Path(__file__).parent.parent
     venv_dir = skill_dir / ".venv"
@@ -45,7 +45,7 @@ def ensure_venv():
     return get_venv_python()
 
 
-def main():
+def main() -> None:
     """Main runner"""
     if len(sys.argv) < 2:
         print("Usage: python run.py <script_name> [args...]")

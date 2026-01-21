@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def vowels_count(s):
+def vowels_count(s) -> None:
     """Write a function vowels_count which takes a string representing
     a word as input and returns the number of vowels in the string.
     Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a

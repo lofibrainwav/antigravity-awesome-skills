@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def compare(game, guess):
+def compare(game, guess) -> None:
     """I think we all remember that feeling when the result of some long-awaited
     event is finally known. The feelings and thoughts you have at that moment are
     definitely worth noting down and comparing.

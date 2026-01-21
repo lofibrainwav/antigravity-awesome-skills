@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def intersection(interval1, interval2):
+def intersection(interval1, interval2) -> None:
     """You are given two intervals,
     where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).
     The given intervals are closed which means that the interval (start, end)

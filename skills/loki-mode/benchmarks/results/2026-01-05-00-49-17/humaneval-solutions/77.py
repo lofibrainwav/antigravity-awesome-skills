@@ -1,4 +1,4 @@
-def iscube(a):
+def iscube(a) -> None:
     """
     Write a function that takes an integer a and returns True
     if this ingeger is a cube of some integer number.

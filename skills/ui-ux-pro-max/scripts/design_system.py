@@ -30,7 +30,7 @@ SEARCH_CONFIG = {
 class DesignSystemGenerator:
     """Generates design system recommendations from aggregated searches."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.reasoning_data = self._load_reasoning()
 
     def _load_reasoning(self) -> list:

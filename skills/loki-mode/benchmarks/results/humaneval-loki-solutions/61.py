@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def correct_bracketing(brackets: str):
+def correct_bracketing(brackets: str) -> None:
     """brackets is a string of "(" and ")".
     return True if every opening bracket has a corresponding closing bracket.
 

@@ -49,7 +49,7 @@ class LocalizationHelper:
         "it": 1.1,  # Italian similar to Spanish
     }
 
-    def __init__(self, app_category: str = "general"):
+    def __init__(self, app_category: str = "general") -> None:
         """
         Initialize localization helper.
 

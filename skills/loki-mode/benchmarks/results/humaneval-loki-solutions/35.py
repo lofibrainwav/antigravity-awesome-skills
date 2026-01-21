@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def max_element(l: list):
+def max_element(l: list) -> None:
     """Return maximum element in the list.
     >>> max_element([1, 2, 3])
     3

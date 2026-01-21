@@ -1,4 +1,4 @@
-def count_upper(s):
+def count_upper(s) -> None:
     """
     Given a string s, count the number of uppercase vowels in even indices.
 

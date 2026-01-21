@@ -1,4 +1,4 @@
-def select_words(s, n):
+def select_words(s, n) -> None:
     """Given a string s and a natural number n, you have been tasked to implement
     a function that returns a list of all words from string s that contain exactly
     n consonants, in order these words appear in the string s.

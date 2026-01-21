@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def sorted_list_sum(lst):
+def sorted_list_sum(lst) -> None:
     """Write a function that accepts a list of strings as a parameter,
     deletes the strings that have odd lengths from it,
     and returns the resulted list with a sorted order,

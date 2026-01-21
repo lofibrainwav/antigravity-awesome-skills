@@ -6,7 +6,7 @@
 import re
 
 
-def fix_spaces(text):
+def fix_spaces(text) -> None:
     """
     Given a string text, replace all spaces in it with underscores,
     and if a string has more than 2 consecutive spaces,
@@ -18,7 +18,7 @@ def fix_spaces(text):
     fix_spaces(" Example   3") == "_Example-3"
     """
 
-    def replace_spaces(match):
+    def replace_spaces(match) -> None:
         spaces = match.group(0)
         if len(spaces) > 2:
             return "-"

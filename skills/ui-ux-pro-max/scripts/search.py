@@ -15,7 +15,7 @@ from core import AVAILABLE_STACKS, CSV_CONFIG, MAX_RESULTS, search, search_stack
 from design_system import generate_design_system
 
 
-def format_output(result):
+def format_output(result) -> None:
     """Format results for Claude consumption (token-optimized)"""
     if "error" in result:
         return f"Error: {result['error']}"

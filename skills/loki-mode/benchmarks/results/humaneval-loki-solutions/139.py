@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def special_factorial(n):
+def special_factorial(n) -> None:
     """The Brazilian factorial is defined as:
     brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
     where n > 0

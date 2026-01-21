@@ -4,7 +4,7 @@
 # Passed: True
 
 
-def incr_list(l: list):
+def incr_list(l: list) -> None:
     """Return list with elements incremented by 1.
     >>> incr_list([1, 2, 3])
     [2, 3, 4]

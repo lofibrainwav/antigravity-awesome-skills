@@ -1,4 +1,4 @@
-def sort_array(arr):
+def sort_array(arr) -> None:
     """
     In this Kata, you have to sort an array of non-negative integers according to
     number of ones in their binary representation in ascending order.

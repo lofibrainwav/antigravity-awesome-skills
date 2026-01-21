@@ -1,4 +1,4 @@
-def get_odd_collatz(n):
+def get_odd_collatz(n) -> None:
     """
     Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.
 

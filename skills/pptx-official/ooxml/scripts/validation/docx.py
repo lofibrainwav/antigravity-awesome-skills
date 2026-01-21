@@ -21,7 +21,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
     # Start with empty mapping - add specific cases as we discover them
     ELEMENT_RELATIONSHIP_TYPES = {}
 
-    def validate(self):
+    def validate(self) -> None:
         """Run all validation checks and return True if all pass."""
         # Test 0: XML well-formedness
         if not self.validate_xml():
@@ -69,7 +69,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
 
         return all_valid
 
-    def validate_whitespace_preservation(self):
+    def validate_whitespace_preservation(self) -> None:
         """
         Validate that w:t elements with whitespace have xml:space='preserve'.
         """
@@ -117,7 +117,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - All whitespace is properly preserved")
             return True
 
-    def validate_deletions(self):
+    def validate_deletions(self) -> None:
         """
         Validate that w:t elements are not within w:del elements.
         For some reason, XSD validation does not catch this, so we do it manually.
@@ -162,7 +162,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - No w:t elements found within w:del elements")
             return True
 
-    def count_paragraphs_in_unpacked(self):
+    def count_paragraphs_in_unpacked(self) -> None:
         """Count the number of paragraphs in the unpacked document."""
         count = 0
 
@@ -181,7 +181,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
 
         return count
 
-    def count_paragraphs_in_original(self):
+    def count_paragraphs_in_original(self) -> None:
         """Count the number of paragraphs in the original docx file."""
         count = 0
 
@@ -205,7 +205,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
 
         return count
 
-    def validate_insertions(self):
+    def validate_insertions(self) -> None:
         """
         Validate that w:delText elements are not within w:ins elements.
         w:delText is only allowed in w:ins if nested within a w:del.
@@ -249,7 +249,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
                 print("PASSED - No w:delText elements within w:ins elements")
             return True
 
-    def compare_paragraph_counts(self):
+    def compare_paragraph_counts(self) -> None:
         """Compare paragraph counts between original and new document."""
         original_count = self.count_paragraphs_in_original()
         new_count = self.count_paragraphs_in_unpacked()

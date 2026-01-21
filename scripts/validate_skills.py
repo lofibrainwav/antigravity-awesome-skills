@@ -2,7 +2,7 @@ import os
 import re
 
 
-def validate_skills(skills_dir):
+def validate_skills(skills_dir) -> None:
     print(f"🔍 Validating skills in: {skills_dir}")
     errors = []
     skill_count = 0

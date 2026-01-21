@@ -1,4 +1,4 @@
-def tri(n):
+def tri(n) -> None:
     """Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in
     the last couple centuries. However, what people don't know is Tribonacci sequence.
     Tribonacci sequence is defined by the recurrence:
