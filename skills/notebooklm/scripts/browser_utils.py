@@ -63,7 +63,9 @@ class StealthUtils:
         time.sleep(random.uniform(min_ms / 1000, max_ms / 1000))
 
     @staticmethod
-    def human_type(page: Page, selector: str, text: str, wpm_min: int = 320, wpm_max: int = 480) -> None:
+    def human_type(
+        page: Page, selector: str, text: str, wpm_min: int = 320, wpm_max: int = 480
+    ) -> None:
         """Type with human-like speed"""
         element = page.query_selector(selector)
         if not element:
